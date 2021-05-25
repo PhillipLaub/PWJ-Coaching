@@ -4,13 +4,27 @@ import Hands from "./components/Hands";
 import Contest from "./components/Contest";
 import { useSelector } from "react-redux";
 import { selectUserHand } from "./slices/gameSlice";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Login from "./components/Login";
+import { selectUserName } from "./slices/userSlice";
 
 function App() {
   const userHand = useSelector(selectUserHand);
+  const userName = useSelector(selectUserName);
+
   return (
     <div className="app">
-      <ScoreBoard />
-      {!userHand ? <Hands /> : <Contest />}
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Login />
+          </Route>
+          <Route exact path="/home">
+            <ScoreBoard />
+            {!userName ? <Hands /> : <Contest />}
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
