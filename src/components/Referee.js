@@ -17,36 +17,36 @@ const Referee = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (userHand == "Paper" && computerHand == "Scissors") {
+    if (userHand === "Paper" && computerHand === "Scissors") {
       setDecision("You Lose!");
       dispatch(setScore(-1));
     }
-    if (userHand == "Paper" && computerHand == "Rock") {
+    if (userHand === "Paper" && computerHand === "Rock") {
       setDecision("You Win!");
       dispatch(setScore(1));
     }
-    if (userHand == "Paper" && computerHand == "Paper") {
+    if (userHand === "Paper" && computerHand === "Paper") {
       setDecision("It's a tie!");
     }
-    if (userHand == "Rock" && computerHand == "Scissors") {
+    if (userHand === "Rock" && computerHand === "Scissors") {
       setDecision("You Win!");
       dispatch(setScore(1));
     }
-    if (userHand == "Rock" && computerHand == "Paper") {
+    if (userHand === "Rock" && computerHand === "Paper") {
       setDecision("You Lose!");
       dispatch(setScore(-1));
     }
-    if (userHand == "Rock" && computerHand == "Rock") {
+    if (userHand === "Rock" && computerHand === "Rock") {
       setDecision("It's a tie!");
     }
-    if (userHand == "Scissors" && computerHand == "Scissors") {
+    if (userHand === "Scissors" && computerHand === "Scissors") {
       setDecision("It's a tie!");
     }
-    if (userHand == "Scissors" && computerHand == "Rock") {
+    if (userHand === "Scissors" && computerHand === "Rock") {
       setDecision("You Lose!");
       dispatch(setScore(-1));
     }
-    if (userHand == "Scissors" && computerHand == "Paper") {
+    if (userHand === "Scissors" && computerHand === "Paper") {
       setDecision("You Win!");
       dispatch(setScore(1));
     }

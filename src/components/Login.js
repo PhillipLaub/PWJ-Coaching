@@ -7,11 +7,13 @@ import {
   selectUserName,
   setUserLoginDetails,
   setSignOutState,
+  selectUserPhoto,
 } from "../slices/userSlice";
 
 const Login = () => {
   //checking whether user exists in redux store
   const userName = useSelector(selectUserName);
+  const userPhoto = useSelector(selectUserPhoto);
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -27,16 +29,12 @@ const Login = () => {
   const signIn = () => {
     if (!userName) {
       auth.signInWithPopup(provider).then((result) => {
-        setUser(result.user).catch((error) => {
-          alert(error.message);
-        });
+        setUser(result.user);
       });
     } else if (userName) {
       auth.signOut().then(() => {
         dispatch(setSignOutState());
-        history.push("/").catch((error) => {
-          alert(error.message);
-        });
+        history.push("/");
       });
     }
   };
@@ -49,7 +47,7 @@ const Login = () => {
 
   return (
     <div className="login">
-      <h1 className="login__heading">Rock Paper Scissor</h1>
+      <h1 className="login__heading">Rock Paper Scissors</h1>
       <div className="login__card">
         <div className="login__bar">
           <img src="/images/logo.png" alt="" />
