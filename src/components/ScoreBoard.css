@@ -45,10 +45,6 @@
   margin-top: 20px;
 }
 
-.logout h1 {
-  color: white;
-}
-
 .logout button {
   padding: 10px;
   border-radius: 5px;
@@ -58,4 +54,21 @@
 
 .logout button:hover {
   transform: translate3d(0px, -5px, 0px);
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.user-image img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.user-name h1 {
+  color: white;
 }

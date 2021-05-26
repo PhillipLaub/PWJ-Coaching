@@ -17,14 +17,28 @@ const Login = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
+  // useEffect(() => {
+  //   auth.onAuthStateChanged(async (user) => {
+  //     if (user) {
+  //       setUser(user);
+  //       history.push("/home");
+  //     }
+  //   });
+  // }, [userName]);
+
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
       if (user) {
-        setUser(user);
+        dispatch(
+          setUserLoginDetails({
+            name: user.displayName,
+            photo: user.photoURL,
+          })
+        );
         history.push("/home");
       }
     });
-  }, [userName]);
+  }, []);
 
   const signIn = () => {
     if (!userName) {

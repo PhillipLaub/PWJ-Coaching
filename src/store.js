@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import gameReducer from "./slices/gameSlice";
-import userReducer from "./slices/userSlice";
+import userSlice from "./slices/userSlice";
 
 export default configureStore({
   reducer: {
     game: gameReducer,
-    user: userReducer,
+    user: userSlice,
   },
 });

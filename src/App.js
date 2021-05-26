@@ -21,7 +21,7 @@ function App() {
           </Route>
           <Route exact path="/home">
             <ScoreBoard />
-            {!userName ? <Hands /> : <Contest />}
+            {!userHand ? <Hands /> : <Contest />}
           </Route>
         </Switch>
       </Router>

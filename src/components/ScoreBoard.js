@@ -13,11 +13,11 @@ import {
   setSignOutState,
 } from "../slices/userSlice";
 
-const ScoreBoard = (user) => {
+const ScoreBoard = () => {
   const score = useSelector(selectScore);
-
   const userName = useSelector(selectUserName);
   const userPhoto = useSelector(selectUserPhoto);
+
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -28,14 +28,20 @@ const ScoreBoard = (user) => {
     });
   };
 
-  console.log(userName);
-
   return (
     <div>
-      <div className="logout">
-        <button onClick={signOut}>LOGOUT</button>
-        <h1>{userName}</h1>
+      <div className="header">
+        <div className="user-image">
+          <img src={userPhoto} alt="" />
+        </div>
+        <div className="user-name">
+          <h1>{userName}</h1>
+        </div>
+        <div className="logout">
+          <button onClick={signOut}>LOGOUT</button>
+        </div>
       </div>
+
       <div className="scoreboard">
         <div className="scoreboard__gameName">
           <img
