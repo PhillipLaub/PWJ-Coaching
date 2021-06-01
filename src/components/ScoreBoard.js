@@ -32,7 +32,7 @@ const ScoreBoard = () => {
     <div>
       <div className="header">
         <div className="user-image">
-          <img src={userPhoto} alt="" />
+          <img src={userPhoto} alt="userPhoto" />
         </div>
         <div className="user-name">
           <h1>{userName}</h1>

@@ -4,7 +4,7 @@
 }
 
 .app {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background: radial-gradient(
     134.34% 134.34% at 50% 0%,

@@ -39,23 +39,6 @@
   color: #2a45c2;
 }
 
-.logout {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.logout button {
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 250ms;
-}
-
-.logout button:hover {
-  transform: translate3d(0px, -5px, 0px);
-}
-
 .header {
   display: flex;
   justify-content: space-around;
@@ -71,4 +54,21 @@
 
 .user-name h1 {
   color: white;
+}
+
+.logout {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.logout button {
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 250ms;
+}
+
+.logout button:hover {
+  transform: translate3d(0px, -5px, 0px);
 }

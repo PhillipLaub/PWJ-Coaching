@@ -7,13 +7,11 @@ import {
   selectUserName,
   setUserLoginDetails,
   setSignOutState,
-  selectUserPhoto,
 } from "../slices/userSlice";
 
 const Login = () => {
   //checking whether user exists in redux store
   const userName = useSelector(selectUserName);
-  const userPhoto = useSelector(selectUserPhoto);
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -29,7 +27,7 @@ const Login = () => {
         history.push("/home");
       }
     });
-  }, []);
+  }, [userName]);
 
   const signIn = () => {
     if (!userName) {
@@ -46,7 +44,7 @@ const Login = () => {
 
   const setUser = (user) => {
     dispatch(
-      setUserLoginDetails({ user: user.displayName, photo: user.photoUrl })
+      setUserLoginDetails({ name: user.displayName, photo: user.photoUrl })
     );
   };
 
